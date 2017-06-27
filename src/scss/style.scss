@@ -1,1 +1,51 @@
-sass --watch src/scss/:assets/css
+//sass --watch src/scss/:assets/css
+//TITULO
+#title{
+	text-align:center;
+	font-size: 1.3rem;
+	padding: 10px;
+	font-weight: bold;
+}
+
+//CREACION DE VARIABLE
+$color-base: red;
+//ATRIBUTOS DE LOS CUADROS
+.cuadro{
+	height: 100px;
+	float: left;
+	width: 15%;
+	margin: 1px;
+}
+
+#uno, #dos, #tres, #cuatro, #cinco, #seis{
+	@extend .cuadro;
+}
+#uno{
+	background: $color-base;
+}
+//ACLARAR
+#dos{
+	background:lighten($color-base,10%);
+}
+//OSCURECER
+#tres{
+	background: darken($color-base,10%);
+}
+//SATURAR
+#cuatro{
+	background:desaturate($color-base,80%);
+}
+//COLOR COMPLEMENTARIO
+#cinco{
+	background:complement($color-base);
+}
+//INVERTIR COLOR
+#seis{
+	background: invert($color-base);
+}
+
+span{
+	color: rgb(53,42,68);
+	font-weight: 600;
+	display: block;
+}
